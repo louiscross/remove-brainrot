@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Remove Social Media Reels",
+  "version": "1.0",
+  "description": "Removes reels and shorts from social media platforms",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.instagram.com/*",
+        "*://*.facebook.com/*",
+        "*://*.linkedin.com/*",
+        "*://*.youtube.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+} 

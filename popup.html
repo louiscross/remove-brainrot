@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 250px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .toggle-label {
+            margin-left: 10px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        .stats-container {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .stats-title {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .reset-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .reset-button:hover {
+            background-color: #e1e1e1;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Remove Reels From:</div>
+    
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="youtube" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-label">YouTube Shorts</span>
+    </div>
+
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="instagram" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Instagram</span>
+    </div>
+
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="facebook" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Facebook</span>
+    </div>
+
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="linkedin" checked>
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-label">LinkedIn</span>
+    </div>
+
+    <div class="stats-container">
+        <div class="stats-title">Your Reel Stats:</div>
+        <div class="stat-item">
+            <span>Reels Clicked:</span>
+            <span class="stat-value" id="reelsClicked">0</span>
+        </div>
+        <div class="stat-item">
+            <span>Reels Scrolled:</span>
+            <span class="stat-value" id="reelsScrolled">0</span>
+        </div>
+        <button class="reset-button" id="resetStats">Reset Stats</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
