@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Remove Social Media Reels",
+  "name": "Remove Brainrot – Block Reels & Distractions on Social Media",
   "version": "1.0",
-  "description": "Removes reels and shorts from social media platforms",
+  "description": "Automatically hides Reels and short-form video content on Instagram, Facebook, LinkedIn—so you can focus, scroll distraction-free.",
   "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html"
